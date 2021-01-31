@@ -61,6 +61,17 @@ h3 {
   margin-left: 20px;
 }
 
+/* Index Styles */
+.blogs a {
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid crimson;
+}
+.blogs a:hover h3 {
+  color: crimson;
+}
+
 /* New Blog/ Create page Styles */
 .create-blog input,
 .create-blog textarea {

@@ -4,25 +4,31 @@
     <%- include('../partials/nav.ejs') %>
 
     <div class="details content">
-      <h2><%= blog.title %></h2>
-      <div class="content">
-        <p><%= blog.author %> </p>
-        <p><%= blog.body %></p>
+      <img class='bannerImg'src="/images/banners/banner<%= rdm %>.jpg" alt="Star Wars Banner" />
+      <h2 id="blog-title"><%= blog.title %></h2>
+      <div class="blog-content">
+        <p id="blog-author">~<%= blog.author %> </p>
+        <p id="blog-body"><%= blog.body %></p>
+        <p id="blog-timestamp"><%= blog.createdAt %> </p>
       </div>
       <a data-doc="<%= blog._id %>"
       <% if (blog.isEternal === true){ %>
         class='eternal'
         <% }else{ %>
       class="delete" 
-      <% } %>>Delete</a>
+      <% } %>>
+    <img id="delete-icon" src="/images/delete.png" alt="Delete Icon">
+    </a>
     </div>
     <%- include('../partials/footer.ejs') %>
 
     <script>
+      // Create the Delete Functionality//
       const deleteBtn = document.querySelector('a.delete');
       deleteBtn.addEventListener('click', (e) => {
-        const endpoint = `/blogs/${deleteBtn.dataset.doc}`;
 
+        // Send request then redirect to main page 
+        const endpoint = `/blogs/${deleteBtn.dataset.doc}`;
         fetch(endpoint, {
           method: "Delete",
         })

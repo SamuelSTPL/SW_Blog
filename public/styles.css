@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright&display=swap");
 body {
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
   font-family: "Noto Serif", serif;
 }
-
+input,
+textarea {
+  caret-color: #588443;
+}
 p,
 h1,
 h2,
@@ -17,12 +21,22 @@ ul {
   text-decoration: none;
   color: #222;
 }
+h2 {
+  margin-bottom: 40px;
+}
+h3 {
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.content {
+  margin-left: 20px;
+}
 
 /* Navbar styles */
 nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   text-transform: uppercase;
@@ -64,45 +78,57 @@ nav a {
 /* Blog Details Styles */
 .details {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .delete {
   position: absolute;
-  top: 0;
+  top: 230px;
   right: 0;
   border-radius: 50%;
   padding: 8px;
+}
+#delete-icon {
+  width: 25px;
 }
 .delete:hover {
   cursor: pointer;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
-
-/* Footer Styles */
-footer {
-  color: #777;
-  text-align: center;
-  margin: 80px auto 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  font-size: 1.5rem;
+.bannerImg {
+  width: 80%;
+  height: 200px;
+  margin: auto;
 }
-footer span {
-  text-decoration: line-through;
+#blog-title {
+  margin-top: 30px;
 }
-h2 {
-  margin-bottom: 40px;
+#blog-author {
+  margin: 15px;
+  font-size: 1.3rem;
+  font-style: italic;
 }
-h3 {
-  text-transform: capitalize;
-  margin-bottom: 8px;
+.blog-content {
+  align-self: flex-start;
 }
-.content {
-  margin-left: 20px;
+#blog-body {
+  font-family: "Cormorant Upright", serif;
+  font-size: 1.3rem;
 }
-
-/* Index Styles */
+#blog-body::first-letter {
+  font-family: "Cormorant Upright", serif;
+  font-size: 100px;
+  display: block;
+  line-height: 0.5;
+  margin: 15px 15px 10px 0;
+  float: left;
+}
+#blog-timestamp {
+  margin-top: 150px;
+}
+/* Index/Homepage Styles */
 .blogs a {
   display: block;
   margin: 40px 0;
@@ -113,7 +139,7 @@ h3 {
   color: #588443;
 }
 
-/* New Blog/ Create page Styles */
+/* New Blog/Create page Styles */
 .create-blog input,
 .create-blog textarea {
   display: block;
@@ -135,4 +161,29 @@ h3 {
   border: 0;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+  color: #777;
+  text-align: center;
+  margin: 80px auto 0px auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  height: 50px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(141, 167, 129, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer span {
+  text-decoration: line-through;
+  margin: 0 10px;
 }

@@ -10,9 +10,13 @@ const blog_index = (req, res) => {
 
 const blog_details = (req, res) => {
     const id = req.params.id
+
+    // Randomise the banner picture displayed
+    const rdm = Math.floor(Math.random() * 4);
+    
     Blog.findById(id)
         .then(result => {
-            res.render('blogs/details', {blog: result, pageTitle: 'Blog Details'})
+            res.render('blogs/details', {blog: result, pageTitle: 'Blog Details', rdm: rdm})
         })
         .catch(err => {
             res.status(404).render('404', {pageTitle: 'Blog not Found'})

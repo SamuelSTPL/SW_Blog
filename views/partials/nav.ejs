@@ -4,8 +4,29 @@
     <p>A Star Wars Blog</p>
   </div>
   <ul>
-    <li><a href="/">Blogs</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/blogs/create">New blog</a></li>
+    <li
+      <% if (pageTitle === 'All Blogs') { %>
+        id='active_blog'
+        <% }else{ %> 
+          id='blog'
+          <% } %>> 
+      <a href="/">Blogs</a>
+    </li>
+    <li
+      <% if (pageTitle === 'About') { %>
+        id='active_about'
+        <% }else{ %> 
+          id='about'
+          <% } %>> 
+      <a href="/about">About</a>
+    </li>
+    <li
+      <% if (pageTitle === 'Create') { %>
+        id='active_create'
+        <% }else{ %> 
+          id='create'
+          <% } %>> 
+      <a href="/blogs/create">New Blog</a>
+    </li>
   </ul>
 </nav>

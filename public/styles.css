@@ -17,6 +17,8 @@ ul {
   text-decoration: none;
   color: #222;
 }
+
+/* Navbar styles */
 nav {
   display: flex;
   justify-content: space-between;
@@ -42,10 +44,31 @@ nav a {
   color: #777;
   font-weight: 300;
 }
+#blog:hover,
+#active_blog {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+}
+#about:hover,
+#active_about {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff0800,
+    0 0 30px #ff0800, 0 0 40px #ff0800, 0 0 55px #ff0800, 0 0 75px #ff0800;
+}
+#create:hover,
+#active_create {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0457a0,
+    0 0 30px #0457a0, 0 0 40px #0457a0, 0 0 55px #0457a0, 0 0 75px #0457a0;
+}
+
 footer {
   color: #777;
   text-align: center;
   margin: 80px auto 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.5rem;
 }
 footer span {
   text-decoration: line-through;
@@ -66,10 +89,10 @@ h3 {
   display: block;
   margin: 40px 0;
   padding-left: 30px;
-  border-left: 6px solid crimson;
+  border-left: 6px solid #588443;
 }
 .blogs a:hover h3 {
-  color: crimson;
+  color: #588443;
 }
 
 /* New Blog/ Create page Styles */
@@ -88,7 +111,7 @@ h3 {
 }
 .create-blog button {
   margin-top: 20px;
-  background: crimson;
+  background: #588443;
   color: white;
   padding: 6px;
   border: 0;

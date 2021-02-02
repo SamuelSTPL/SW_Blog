@@ -12,6 +12,7 @@ const app = express();
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         //Listen only when connected to DB
+        console.log("Connected to DB")
         app.listen(3000);
         })
     .catch((err) => console.log(err))
